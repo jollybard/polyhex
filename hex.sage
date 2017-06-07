@@ -3,8 +3,13 @@
 
 #Les hexagones sont tuples (x,y,z) d'entiers tels que x + y + z = 0
 #
+#Ce programme a été conçu pour être utilisé de façcon interactive.
+#Cependant, vous pouvez aussi utiliser `sage hex.sage <n>`, où
+# <n> est la taille maximale de polyhex qui vous intéresse.
+#
 #Utiliser maxFeuilles(n) pour énumérer les arbres de taille jusqu'à n
-#et donner le maximum du nombre de feuilles
+#et donner le maximum du nombre de feuilles 
+#
 #
 #ATTENTION: l'algorithme devient rapidement très lent, je suggère une
 #valeur de n = 9
