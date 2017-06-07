@@ -58,7 +58,8 @@ Soit $G = (V,E)$ un graphe simple quelconque. On dit qu'un sommet
 $u \in V$ est une feuille si et seulement si $\text{deg}(u) = 1$, 
 et on écrit $n_1(G)$ le nombre de feuilles de $G$. La 
 \emph{taille} de $G$ est le nombre de sommets de $G$, écrit $n(G)$.
-La \emph{profondeur} d'un sommet $v$ dans un arbre $T$ est définie récursivement ainsi:
+La \emph{profondeur} d'un sommet $v$ dans un arbre $T$ est définie 
+récursivement ainsi:
 \[
    prof_T(v) =
    \begin{cases}
@@ -150,9 +151,18 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = l(n)$.
    voisins; et dans le cas des polyhexagones, avoir plus de 3 voisins
    créerait un cycle.
 
-   Deuxièmement, $T$ ne peut pas avoir de sommet de profondeur 2. Supposons qu'un tel sommet $u_2$ existe. Alors $u_2$ doit avoir un voisin de profondeur 1, $v_1$. Nous avons vu que $v_1$ devait avoir trois voisins. Deux d'entre eux sont nécessairement des feuilles. Considérons alors l'arbre $T'$ obtenu en supprimant les deux feuilles adjacentes à $v_1$. On a que $n(T) = n(T') + 2$ mais $n_1(T) = n_1(T') + 1$, contredisant le lemme \ref{lem:hyp}.
+   Deuxièmement, $T$ ne peut pas avoir de sommet de profondeur 2. 
+   Supposons qu'un tel sommet $u_2$ existe. Alors $u_2$ doit avoir un 
+   voisin de profondeur 1, $v_1$. Nous avons vu que $v_1$ devait avoir 
+   trois voisins. Deux d'entre eux sont nécessairement des feuilles. 
+   Considérons alors l'arbre $T'$ obtenu en supprimant les deux feuilles 
+   adjacentes à $v_1$. On a que $n(T) = n(T') + 2$ mais $n_1(T) = 
+   n_1(T') + 1$, contredisant le lemme \ref{lem:hyp}.
 
-   Puisque tous les polyhexagones ou polytriangles arborescents de taille supérieure à 4 ont au moins un sommet de profondeur 2, la preuve est complétée par vérification exhaustive des polyhexagones ou polytriangles arborescents de taille inférieure ou égale à 4.
+   Puisque tous les polyhexagones ou polytriangles arborescents de taille 
+   supérieure à 4 ont au moins un sommet de profondeur 2, la preuve est 
+   complétée par vérification exhaustive des polyhexagones ou 
+   polytriangles arborescents de taille inférieure ou égale à 4.
 \end{proof}
 
 En combinant les lemmes précedant, on obtient le théorème suivant.
