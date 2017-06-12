@@ -30,15 +30,15 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\dist}{\text{dist}}
-\newcommand{\Lhex}{L_{\test{hex}}}
-\newcommand{\Ltri}{L_{\test{tri}}}
+\newcommand{\Lhex}{L_{\text{hex}}}
+\newcommand{\Ltri}{L_{\text{tri}}}
 \newcommand{\Ghex}{\mathcal{G}_{\text{hex}} }
 \newcommand{\Hex}{\mathcal{H}}
 \newcommand{\hex}{\text{hex}}
 \newcommand{\Gtri}{\mathcal{G}_{\text{tri}}}
 \newcommand{\Tri}{\mathcal{T}}
 \newcommand{\tri}{\text{tri}}
-\renewcommand{\g}{\text{gauche}}
+\newcommand{\g}{\text{gauche}}
 \renewcommand{\d}{\text{droite}}
 
 \begin{document}
@@ -63,7 +63,7 @@ récursivement ainsi:
 \[
    prof_T(v) =
    \begin{cases}
-      0, \qquad & \text{si} \text{deg}_T(u) \leq 1; \\
+      0, \qquad & \text{si $\text{deg}_T(u) \leq 1$}; \\
       1 + prof_{T'}(u), & \text{sinon},
    \end{cases}
 \]
@@ -160,7 +160,7 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = l(n)$.
    n_1(T') + 1$, contredisant le lemme \ref{lem:hyp}.
 
    Puisque tous les polyhexagones ou polytriangles arborescents de taille 
-   supérieure à 4 ont au moins un sommet de profondeur 2, la preuve est 
+   supé\-rieure à 4 ont au moins un sommet de profondeur 2, la preuve est 
    complétée par vérification exhaustive des polyhexagones ou 
    polytriangles arborescents de taille inférieure ou égale à 4.
 \end{proof}
