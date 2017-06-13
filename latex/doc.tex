@@ -8,6 +8,12 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{todonotes}
+
+% Todo
+\newcommand\todoalex[1]{\todo[inline]{Alexandre : #1}}
+\newcommand\todoantoine[1]{\todo[inline]{Antoine : #1}}
 
 %\usepackage[urw-garamond]{mathdesign}
 %\usepackage[T1]{fontenc}
@@ -43,8 +49,11 @@
 
 \begin{document}
 
+\todoalex{Ajouter un titre + auteur avec la commande \texttt{maketitle}}
+
 \section{Définitions}
 
+\todoalex{Définir plus formellement ce que sont les hexagones (définition géométrique), ainsi que la relation d'adjacence (quelle est la règle pour décider si deux hexagones sont adjacents), pour faciliter le passage vers l'informatique.}
 Le \emph{pavage hexagonal} est le pavage du plan euclidien constitué
 d'hexagones réguliers. Nous nous intéresserons à son graphe simple
 associé, caractérisé comme $\Ghex = (\Hex, A_{\text{hex}})$, où $\Hex$
@@ -54,6 +63,7 @@ est l'ensemble des \emph{hexagones} et $A_\hex = \{(p,p') \in \Hex
 \subset \Hex$, on dit que $\Ghex[U]$ est un \emph{polyhexagone} s'il est 
 connexe. Les \emph{polytriangles} sont définis similairement.
 
+\todoalex{Déplacer ce paragraphe plus haut. Ce sont des définitions générales sur les graphes, donc ça devrait apparaître avant.}
 Soit $G = (V,E)$ un graphe simple quelconque. On dit qu'un sommet 
 $u \in V$ est une feuille si et seulement si $\text{deg}(u) = 1$, 
 et on écrit $n_1(G)$ le nombre de feuilles de $G$. La 
@@ -76,6 +86,11 @@ dénoté $\Lhex(n)$ et $\Ltri(n)$, respectivement.
 
 \section{Démonstration}
 
+\todoalex{Changer le titre de la section, qui porte sur les pavages hexagonaux. Démonstration est trop vague.}
+
+\todoalex{Éviter l'emploi de la lettre $l$ en mode mathématique. Préférer $\ell$.}
+
+\todoalex{Tu définis $l$ de façon non récursive. Comme ton argument dans la démonstration est récursif, je pense qu'il serait mieux de le définir récursivement, quitte à indiquer que la version non récursive est facile à trouver et la donner.}
 Pour tout entier $n \geq 2$, soit la fonction $l(n)$ telle que
 \begin{equation}
    \label{eq:l}
@@ -99,19 +114,23 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = l(n)$.
    \includegraphics[width=\textwidth]{In.eps}
    \end{figure}
 
+   \todoalex{J'ai changé la commande \texttt{mod} par \texttt{bmod}, qui donne un meilleur aspect typographique. J'ai aussi enlevé les parenthèses en indice.}
+   \todoalex{Lorsque tu utilises un caratère $|$ dans un ensemble, il est mieux de mettre $\mid$ qui gère mieux l'espacement. Je l'ai changé plus bas, regarder ailleurs si ça s'applique.}
    Pour ce faire, nous allons commencer par définir une famille
-   auxiliaire de polyhexagones à $n - 1$ cellules, $\{I_n | n \geq 2\}$ 
+   auxiliaire de polyhexagones à $n - 1$ cellules, $\{I_n \mid n \geq 2\}$ 
    (figure \ref{fig:In}), à laquelle nous ajoutons un hexagone 
    supplémentaire vers la gauche. Pour $n>5$, $I_n$ est construit en 
    collant $\lfloor \frac{n-1}{4} \rfloor$ fois $I_5$, puis en ajoutant 
-   $I_{(n \mod 4)}$ à la droite. On remarque que $I_n$ gagne une feuille 
+   $I_{n \bmod 4}$ à la droite.
+   \todoalex{C'est la phrase ci-bas qui cache un argument récursif, même si ça ne paraît pas immédiatement.}
+   On remarque que $I_n$ gagne une feuille 
    à chaque bond de 2, et que l'hexagone supplémentaire rajoute une 
    feuille, d'où la formule en \eqref{eq:l}. 
 \end{proof}
 
 \begin{lem}
    \label{lem:hyp}
-   Soit $T$ un polyhexagone ou un polytriangle arborescent de taille minimal tel que $n_1(T) > l(n(T))$ et soit $T'$ un polyhexagone ou un polytriangle arborescent tel $n(T) = n(T') + 2$. Alors
+   Soit $T$ un polyhexagone ou un polytriangle arborescent de taille minimale tel que $n_1(T) > l(n(T))$ et soit $T'$ un polyhexagone ou un polytriangle arborescent tel $n(T) = n(T') + 2$. Alors
    \[
       n_1(T) > n_1(T) + 1.
    \]
@@ -119,8 +138,10 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = l(n)$.
 
 \begin{proof}
    Premièrement, remarquons que $l(n + 2) = l(n) + 1$. En effet,
+   \todoalex{J'ai ajouté les commandes \texttt{left} et \texttt{right} pour équilibrer les symboles $\lfloor$ et $\rfloor$. Je te laisse corriger pour le reste du document.}
+   \todoalex{Mettre la suite d'égalités sur une seule ligne, vu que chaque étape est évidente.}
    \begin{align*}
-      l(n+2) &= \lfloor \frac{n+2}{2} \rfloor + 1 \\
+      l(n+2) &= \left\lfloor \frac{n+2}{2} \right\rfloor + 1 \\
              &= \lfloor n/2 + 1 \rfloor + 1 \\
              &= \lfloor n/2 \rfloor + 1 + 1 = l(n) + 1.
    \end{align*}
@@ -163,10 +184,13 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = l(n)$.
    supé\-rieure à 4 ont au moins un sommet de profondeur 2, la preuve est 
    complétée par vérification exhaustive des polyhexagones ou 
    polytriangles arborescents de taille inférieure ou égale à 4.
+
+   \todoalex{La démonstration est claire et me semble correcte. Tu as bien compris celle que nous avions faite, en la simplifiant pour le cas des polyhexes/polytriangles.}
 \end{proof}
 
 En combinant les lemmes précedant, on obtient le théorème suivant.
 
+\todoalex{Je remplacerais $\frac{1}{2}n$ par $n / 2$, qui m'apparaît plus esthétique.}
 \begin{thm}
    Pour tout $n \geq 2$, $\Lhex = \Ltri = l(n)$, et leur croissance
    asymptotique est donnée par $\frac{1}{2}n$. \hfill $\blacksquare$
