@@ -45,7 +45,7 @@
 \renewcommand{\d}{\text{droite}}
 
 \title{Polyhexes et polyamants arborescents pleinement feuillus}
-\author{Antoine Beaudet et Alexandre Blondin-Massé}
+\author{Antoine Beaudet}
 
 \begin{document}
 
@@ -70,12 +70,14 @@ où $T'$ est l'arbre obtenu en retirant toutes les feuilles de $T$.
 
 Le \emph{pavage hexagonal} est le pavage du plan euclidien constitué
 d'hexagones réguliers. Nous nous intéresserons à son graphe simple
-associé, caractérisé comme $\Ghex = (\Hex, A_{\text{hex}})$, où $\Hexi = \{ (x,y,z) \in \Z^3 \mid x + y + z = 0\}$
+associé, caractérisé comme $\Ghex = (\Hex, A_{\text{hex}})$, où 
+$\Hex = \{ (x,y,z) \in \Z^3 \mid x + y + z = 0\}$
 est l'ensemble des \emph{hexagones} et $A_\hex = \{(p,p') \in \Hex 
 \times \Hex \mid \dist_1(p,p')=2\}$ est la 
 \emph{relation d'adjacence hexagonale}. Pour tout sous-ensemble fini $U 
 \subset \Hex$, on dit que $\Ghex[U]$ est un \emph{polyhexe} s'il est 
-connexe. Les \emph{polyamants} sont définis similairement, comme sous-ensembles connexes du pavage triangulaire.
+connexe. Les \emph{polyamants} sont définis similairement, 
+comme sous-ensembles connexes du pavage triangulaire.
 
 Nous nous intéresserons alors aux polyhexes et polyamants
 acycliques, dits \emph{arborescents}. Le nombre maximal de feuilles 
@@ -132,7 +134,9 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = \ell(n)$.
 
 \begin{lem}
    \label{lem:hyp}
-   Soit $T$ un polyhexe ou un polyamant arborescent de taille minimale tel que $n_1(T) > \ell(n(T))$ et soit $T'$ un polyhexe ou un polyamant arborescent tel $n(T) = n(T') + 2$. Alors
+   Soit $T$ un polyhexe ou un polyamant arborescent de taille minimale 
+   tel que $n_1(T) > \ell(n(T))$ et soit $T'$ un polyhexe ou un 
+   polyamant arborescent tel $n(T) = n(T') + 2$. Alors
    \[
       n_1(T) > n_1(T) + 1.
    \]
