@@ -97,9 +97,9 @@ où
    \label{eq:i}
    i(n) =
    \begin{cases}
-      1 \qquad \text{si $n = 1,2$} \\
-      2 \qquad \text{si $n = 3,4$} \\
-      i(4) + i(n-4) \qquad \text{sinon}
+      1 \qquad &\text{si $n = 1,2$} \\
+      2 \qquad &\text{si $n = 3,4$} \\
+      i(4) + i(n-4) \qquad &\text{sinon}
    \end{cases}
 \end{equation}
 Il est d'ailleurs facile de voir que 
@@ -125,9 +125,9 @@ Nous allons démontrer que $\Ltri(n) = \Lhex(n) = \ell(n)$.
 
    Pour ce faire, nous allons commencer par définir une famille
    auxiliaire de polyhexes à $k$ cellules, $\{I_k \mid k \in \N\}$ 
-   (figure \ref{fig:Ik})
+   (figure \ref{fig:Ik}).
    Pour $k>4$, $I_k$ est construit 
-   récursivement en collant $I_4$ à la gauche de $I_{n-4}$, d'où $i(n)$ en
+   récursivement en collant $I_4$ à la gauche de $I_{k-4}$, d'où $i(n)$ en
    \eqref{eq:i}.
    Enfin, on construit $H_n$ en ajoutant un hexagone à la gauche de $I_{n-1}$, d'où la formule en \eqref{eq:l}.
 \end{proof}
@@ -191,4 +191,6 @@ En combinant les lemmes précedant, on obtient le théorème suivant.
    Pour tout $n \geq 2$, $\Lhex = \Ltri = \ell(n)$, et leur croissance
    asymptotique est donnée par $n/2$. \hfill $\square$
 \end{thm}
+
+\todoantoine{Ajouter citations, références}
 \end{document}
